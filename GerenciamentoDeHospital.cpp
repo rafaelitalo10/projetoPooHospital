@@ -30,7 +30,7 @@ void Hospital::relatorio_estatistico(){
 
 }
 
-// Inclusão da classe Paciente neste arquivo!
+// Inclusï¿½o da classe Paciente neste arquivo!
  
 class Paciente {
 private:
@@ -155,7 +155,6 @@ void Paciente::imprimir(){
  
 }
 
-// 
 class ArquivoPacientes
 {
 private:
@@ -210,16 +209,15 @@ void ArquivoPacientes :: Delete(){
 }
  
  
- 
- 
 class Leito //Cama
 {
 private:
-   int ocupado;
+   bool ocupado;
 public:
    Leito(/* args */);
    ~Leito();
    void set_ocupacao(int valor);  //Definir como ocupado ou desocupado
+   bool get_ocupacao();
 };
  
 Leito::Leito(/* args */)
@@ -233,8 +231,12 @@ Leito::~Leito()
 void Leito::set_ocupacao(int valor){//0 = livre | 1 = ocupado
     ocupado = valor;
 }
- 
- 
+
+bool Leito::get_ocupacao(){
+   return ocupado;
+}
+
+
 class Sala {
 private:
    vector<Leito> leitos;
@@ -256,17 +258,18 @@ Sala::~Sala()
 }
  
 int Sala::get_numero_leitos(){
- 
+   return 0;
 }
  
 int Sala::get_numero_leitos_ocupados(){
- 
+   return 0;
 }
  
 int Sala::get_numero_leitos_desocupados(){
- 
+   return 0;
 }
- 
+
+
 class Ala{
 private:
    vector<Sala> salas;
@@ -287,6 +290,7 @@ Ala::Ala(/* args */)
 Ala::~Ala()     
 {
 }
+
  
 int main(int argc, char const *argv[])
 {
