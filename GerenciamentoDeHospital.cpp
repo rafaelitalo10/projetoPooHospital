@@ -216,7 +216,7 @@ private:
 public:
    Leito(/* args */);
    ~Leito();
-   void set_ocupacao(int valor);  //Definir como ocupado ou desocupado
+   void set_ocupacao(bool valor);  //Definir como ocupado ou desocupado
    bool get_ocupacao();
 };
  
@@ -228,7 +228,7 @@ Leito::~Leito()
 {
 }
  
-void Leito::set_ocupacao(int valor){//0 = livre | 1 = ocupado
+void Leito::set_ocupacao(bool valor){//false = livre | true = ocupado
     ocupado = valor;
 }
 
@@ -240,6 +240,10 @@ bool Leito::get_ocupacao(){
 class Sala {
 private:
    vector<Leito> leitos;
+   int numero_leitos;
+   int numero_leitos_ocupados;
+   int numero_leitos_desocupados;
+   double percentual_ocupacao;
  
 public:
    Sala(/* args */);
@@ -247,6 +251,11 @@ public:
    int get_numero_leitos();
    int get_numero_leitos_ocupados();
    int get_numero_leitos_desocupados();
+   double get_percentual_ocupacao();
+   void calcular_numero_leitos_ocupados();
+   void calcular_numero_leitos_desocupados();
+   void calcular_percentual_ocupacao();
+
 };
  
 Sala::Sala(/* args */)
@@ -258,15 +267,31 @@ Sala::~Sala()
 }
  
 int Sala::get_numero_leitos(){
-   return 0;
+   return numero_leitos;
 }
  
 int Sala::get_numero_leitos_ocupados(){
-   return 0;
+   return numero_leitos_ocupados;
 }
  
 int Sala::get_numero_leitos_desocupados(){
-   return 0;
+   return numero_leitos_desocupados;
+}
+
+double Sala::get_percentual_ocupacao(){
+   return percentual_ocupacao;
+}
+
+void Sala::calcular_numero_leitos_ocupados(){
+
+}
+
+void Sala::calcular_numero_leitos_desocupados(){
+   
+}
+
+void Sala::calcular_percentual_ocupacao(){
+   
 }
 
 
