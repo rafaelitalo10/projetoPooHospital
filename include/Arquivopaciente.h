@@ -1,3 +1,5 @@
+#ifndef ARQUIVOPACIENTE_H
+#define ARQUIVOPACIENTE_H
 #include "Paciente.h"
 #include<time.h>
 
@@ -15,3 +17,6 @@ class ArquivoPacientes
        void Update(Paciente p, int i);
        void Delete();
 };
+
+
+#endif // ARQUIVOPACIENTE_H

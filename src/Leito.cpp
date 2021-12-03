@@ -1,8 +1,9 @@
 #include "Leito.h"
 
-Leito::Leito(bool ocupacao)
+Leito::Leito(bool ocupacao, int n_leito)
 {
     ocupado = ocupacao;
+    numero_leito = n_leito;
 }
 
 Leito::~Leito()

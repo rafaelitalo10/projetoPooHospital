@@ -2,7 +2,9 @@
 #define PACIENTE_H_INCLUDED
 #include<vector>
 #include<string>
-
+#include "Ala.h"
+#include "Sala.h"
+#include "Leito.h"
 
 using namespace std;
 
@@ -16,7 +18,14 @@ private:
    string tipo_s;
    string classe_triagem;
    string situacao; //internado/alta
+   int numero_leito;
+   int numero_sala;
+   string nome_ala;
+   bool ocupacao = true;
    vector<string> historico;
+   Ala ala(string nome_ala);  // Aqui tem que saber em qual ala o paciente está
+   Sala sala(int numero_sala);  // A sala que o paciente está.
+   Leito leito(bool ocupacao, int numero_leito); //O leito que o paciente está
 
 public:
    Paciente(string temp_cpf, string temp_nome, string temp_endereco, string temp_telefone_contato, string temp_tipo_s, int temp_idade );

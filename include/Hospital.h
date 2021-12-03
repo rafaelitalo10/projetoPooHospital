@@ -1,4 +1,5 @@
-
+#ifndef HOSPITAL_H
+#define HOSPITAL_H
 class Hospital
 {
 private:
@@ -8,3 +9,6 @@ public:
    ~Hospital();
    void relatorio_estatistico();
 };
+
+
+#endif // HOSPITAL_H

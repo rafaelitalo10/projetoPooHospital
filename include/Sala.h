@@ -1,5 +1,10 @@
+#ifndef SALA_H
+#define SALA_H
+
 #include "Leito.h"
 #include<vector>
+#include<iostream>
+using namespace std;
 using std::vector;
 
 class Sala {
@@ -13,7 +18,9 @@ private:
 
 public:
    Sala(int n_sala, int n_leitos);
+   Sala(int n_sala);
    ~Sala();
+   void leitura_numero_da_sala();
    int get_numero_sala();
    int get_numero_leitos();
    int get_numero_leitos_ocupados();
@@ -24,3 +31,4 @@ public:
    void calcular_percentual_ocupacao();
 
 };
+#endif

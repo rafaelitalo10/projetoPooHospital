@@ -4,11 +4,20 @@ Sala::Sala(int n_sala, int n_leitos)
     numero_leitos = n_leitos;
 
 }
+Sala::Sala(int n_sala){
+    numero_sala = n_sala;
+}
 
 Sala::~Sala()
 {
+    leitura_numero_da_sala();
 }
-
+void Sala::leitura_numero_da_sala(){
+    int num_sala;
+     cout << "Digite o número da sala do paciente: "<< endl;
+      cin >> num_sala;
+      numero_sala = num_sala;
+}
 int Sala::get_numero_sala(){
     return numero_sala;
 }

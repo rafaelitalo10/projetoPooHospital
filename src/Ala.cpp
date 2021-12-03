@@ -1,6 +1,8 @@
 #include<Ala.h>
-Ala::Ala(/* args */)
+
+Ala::Ala(string ala)
 {
+    nome_da_ala = ala;
 }
 Ala::~Ala()
 {

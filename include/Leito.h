@@ -5,8 +5,9 @@ class Leito //Cama
 {
 private:
     bool ocupado;
+    int numero_leito; //chave para saber em qual leito o paciente está
 public:
-    Leito(bool ocupacao);
+    Leito(bool ocupacao, int n_leito);
     ~Leito();
     void set_ocupacao(bool valor);  //Definir como ocupado ou desocupado
     bool get_ocupacao();

@@ -1,3 +1,6 @@
+#ifndef ALA_H
+#define ALA_H
+
 #include <map>
 #include<vector>
 using std::vector;
@@ -13,7 +16,7 @@ private:
    int percentual_ocupacao;
 
 public:
-   Ala(/* args */);
+   Ala(string ala);
    ~Ala();
    void Create(); //vou utilizar um dicionário
    void Read();
@@ -24,4 +27,8 @@ public:
    double get_percentual_ocupacao();
    void calcular_percentual_ocupacao();
 };
+
+
+#endif // ALA_H
+
 

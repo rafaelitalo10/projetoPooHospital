@@ -19,7 +19,7 @@
 	<vector>
 	<iostream>
 
-1638553657 source:c:\users\maria\documents\projetopoohospital\main.cpp
+1638564296 source:c:\users\maria\documents\projetopoohospital\main.cpp
 	<iostream>
 	"Leito.h"
 	"Paciente.h"
@@ -56,39 +56,52 @@
 	<string>
 	<time.h>
 
-1638551361 source:c:\users\maria\documents\projetopoohospital\src\leito.cpp
+1638557975 source:c:\users\maria\documents\projetopoohospital\src\leito.cpp
 	"Leito.h"
 
-1638551212 c:\users\maria\documents\projetopoohospital\include\leito.h
+1638558361 c:\users\maria\documents\projetopoohospital\include\leito.h
 
-1638551212 source:c:\users\maria\documents\projetopoohospital\include\leito.h
+1638558361 source:c:\users\maria\documents\projetopoohospital\include\leito.h
 
 1638552029 source:c:\users\maria\documents\projetopoohospital\src\paciente.cpp
 	<time.h>
 	<iostream>
 	"Paciente.h"
 
-1638552029 c:\users\maria\documents\projetopoohospital\include\paciente.h
+1638563680 c:\users\maria\documents\projetopoohospital\include\paciente.h
 	<vector>
 	<string>
+	"Ala.h"
+	"Sala.h"
+	"Leito.h"
 
 1638552651 source:c:\users\maria\documents\projetopoohospital\src\hospital.cpp
 	<iostream>
 	"Hospital.h"
 
-1638552667 c:\users\maria\documents\projetopoohospital\include\hospital.h
+1638564739 c:\users\maria\documents\projetopoohospital\include\hospital.h
 
 1638553006 source:c:\users\maria\documents\projetopoohospital\src\arquivopaciente.cpp
 	"Arquivopaciente.h"
 
-1638553006 c:\users\maria\documents\projetopoohospital\include\arquivopaciente.h
+1638564700 c:\users\maria\documents\projetopoohospital\include\arquivopaciente.h
 	"Paciente.h"
 	<time.h>
 
-1638553507 source:c:\users\maria\documents\projetopoohospital\src\sala.cpp
+1638560385 source:c:\users\maria\documents\projetopoohospital\src\sala.cpp
 	<Sala.h>
 
-1638553507 c:\users\maria\documents\projetopoohospital\include\sala.h
+1638564787 c:\users\maria\documents\projetopoohospital\include\sala.h
 	"Leito.h"
 	<vector>
+	<iostream>
+
+1638561573 source:c:\users\maria\documents\projetopoohospital\src\ala.cpp
+	<Ala.h>
+
+1638564631 c:\users\maria\documents\projetopoohospital\include\ala.h
+	<map>
+	<vector>
+	"Sala.h"
+	<string>
 
