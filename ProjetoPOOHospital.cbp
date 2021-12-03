@@ -40,14 +40,21 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/Ala.h" />
+		<Unit filename="include/Arquivopaciente.h" />
+		<Unit filename="include/Hospital.h" />
 		<Unit filename="include/Leito.h">
 			<Option compile="1" />
 		</Unit>
 		<Unit filename="include/Paciente.h" />
+		<Unit filename="include/Sala.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Ala.cpp" />
+		<Unit filename="src/Arquivopaciente.cpp" />
 		<Unit filename="src/Hospital.cpp" />
 		<Unit filename="src/Leito.cpp" />
 		<Unit filename="src/Paciente.cpp" />
+		<Unit filename="src/Sala.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
