@@ -5,7 +5,7 @@ class Leito //Cama
 {
 private:
     bool ocupado;
-    int numero_leito; //chave para saber em qual leito o paciente está
+    int numero_leito; //chave para saber em qual leito o paciente estï¿½
 public:
     Leito(bool ocupacao, int n_leito);
     ~Leito();

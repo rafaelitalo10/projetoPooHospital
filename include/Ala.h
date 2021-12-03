@@ -17,8 +17,9 @@ private:
 
 public:
    Ala(string ala);
+   Ala(string ala, int n_de_salas);
    ~Ala();
-   void Create(); //vou utilizar um dicionário
+   void Create(); //vou utilizar um dicionï¿½rio
    void Read();
    void Update();
    void Delete();
@@ -30,5 +31,3 @@ public:
 
 
 #endif // ALA_H
-
-
