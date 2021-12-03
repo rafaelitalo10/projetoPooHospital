@@ -1,11 +1,12 @@
-//  Controle e gerenciamento de pacientes.
+
+// Controle e gerenciamento de pacientes.
 #include<iostream>
 #include<vector>
 #include<string>
 #include<time.h>
+#include "Paciente.h"
+using std::vector;
 
-//#include "Paciente.h"
- 
 using namespace std;
 
 class Hospital
@@ -31,7 +32,7 @@ void Hospital::relatorio_estatistico(){
 }
 
 // Inclus�o da classe Paciente neste arquivo!
- 
+
 class Paciente {
 private:
    string cpf; //chave
@@ -43,7 +44,7 @@ private:
    string classe_triagem;
    string situacao; //internado/alta
    vector<string> historico;
- 
+
 public:
    Paciente(/* args */);
    ~Paciente();
@@ -61,7 +62,7 @@ public:
 Paciente::Paciente(/* args */)
 {
 }
- 
+
 Paciente::~Paciente()
 {
 }
@@ -132,7 +133,7 @@ void Paciente::leitura_situacao(){
       set_situacao( temp_situacao );
 }
 void Paciente::set_situacao( string temp_situacao){
-    situacao = temp_situacao; 
+    situacao = temp_situacao;
 }
 string Paciente::get_paciente(string cpf){
 	return nome;
@@ -152,7 +153,7 @@ void Paciente::imprimir(){
     cout << "TELEFONE: "  << telefone_contato << endl;
     cout << "TIPO SANGUINEO: " << tipo_s << endl;
     cout << "SITUACAO: "  << situacao << endl;
- 
+
 }
 
 class ArquivoPacientes
@@ -169,46 +170,46 @@ public:
    void Update(Paciente p, int i);
    void Delete();
 };
- 
+
 ArquivoPacientes::ArquivoPacientes(/* args */)
 {
   struct tm *data_tempo;
   time_t segundos;
   time(&segundos);
- 
+
   data_tempo = localtime(&segundos);
-  
+
 	// inclusao de data e hora ao criar o arquivo
-  data_in_out[0] = data_tempo->tm_mday;  
+  data_in_out[0] = data_tempo->tm_mday;
   data_in_out[1] = data_tempo->tm_mon+1;
   data_in_out[2] = data_tempo->tm_year+1900;
   data_in_out[3] = data_tempo->tm_hour;
   data_in_out[4] = data_tempo->tm_min;
   data_in_out[5] = data_tempo->tm_sec;
- 
+
 }
- 
+
 ArquivoPacientes::~ArquivoPacientes()
 {
 }
- 
+
 void ArquivoPacientes::Create(Paciente p){
    pacientes.push_back(p);
 }
- 
+
 Paciente ArquivoPacientes::Read(int i){
    return pacientes[i];
 }
- 
+
 void ArquivoPacientes :: Update(Paciente p,int i){
    pacientes[i] = p;
 }
- 
+
 void ArquivoPacientes :: Delete(){
    pacientes.pop_back();
 }
- 
- 
+
+
 class Leito //Cama
 {
 private:
@@ -219,15 +220,15 @@ public:
    void set_ocupacao(bool valor);  //Definir como ocupado ou desocupado
    bool get_ocupacao();
 };
- 
+
 Leito::Leito(/* args */)
 {
 }
- 
+
 Leito::~Leito()
 {
 }
- 
+
 void Leito::set_ocupacao(bool valor){//false = livre | true = ocupado
     ocupado = valor;
 }
@@ -237,17 +238,21 @@ bool Leito::get_ocupacao(){
 }
 
 
+
+
 class Sala {
 private:
    vector<Leito> leitos;
+   int numero_sala; //chave
    int numero_leitos;
    int numero_leitos_ocupados;
    int numero_leitos_desocupados;
    double percentual_ocupacao;
- 
+
 public:
-   Sala(/* args */);
+   Sala(int n_sala, int n_leitos, int n_leitos_ocupados, int n_leitos_desocupados, double perc_ocupados);
    ~Sala();
+   int get_numero_sala();
    int get_numero_leitos();
    int get_numero_leitos_ocupados();
    int get_numero_leitos_desocupados();
@@ -257,23 +262,30 @@ public:
    void calcular_percentual_ocupacao();
 
 };
- 
-Sala::Sala(/* args */)
-{
+
+Sala::Sala(int n_sala, int n_leitos, int n_leitos_ocupados, int n_leitos_desocupados, double perc_ocupados)
+{   numero_sala = n_sala;
+    numero_leitos = n_leitos;
+    numero_leitos_ocupados = n_leitos_ocupados;
+    numero_leitos_desocupados = n_leitos_desocupados;
+    percentual_ocupacao = perc_ocupados;
 }
- 
+
 Sala::~Sala()
 {
 }
- 
+int Sala::get_numeto_sala(){
+    return numero_sala;
+}
+
 int Sala::get_numero_leitos(){
    return numero_leitos;
 }
- 
+
 int Sala::get_numero_leitos_ocupados(){
    return numero_leitos_ocupados;
 }
- 
+
 int Sala::get_numero_leitos_desocupados(){
    return numero_leitos_desocupados;
 }
@@ -283,15 +295,29 @@ double Sala::get_percentual_ocupacao(){
 }
 
 void Sala::calcular_numero_leitos_ocupados(){
+    int quantidade = 0;
+    for(int i=0; i < numero_leitos; i++){
+        if (leitos[i].get_ocupacao() == true){
+            quantidade++;
+        }
+    }
+    numero_leitos_ocupados = quantidade;
 
 }
 
 void Sala::calcular_numero_leitos_desocupados(){
-   
+    int quantidade = 0;
+    for(int i=0; i < numero_leitos; i++){
+        if (leitos[i].get_ocupacao() == false){
+            quantidade++;
+        }
+    }
+    numero_leitos_desocupados = quantidade;
+
 }
 
 void Sala::calcular_percentual_ocupacao(){
-   
+    percentual_ocupacao = numero_leitos_ocupados*100/numero_leitos;
 }
 
 
@@ -307,19 +333,18 @@ public:
    void Delete();
    void TaxaOcupacaoLeito(); //futuramente chama ao objeto salax para pegar get_numero_leitos_ocupados()
 };
- 
+
 Ala::Ala(/* args */)
 {
 }
- 
-Ala::~Ala()     
+
+Ala::~Ala()
 {
 }
 
- 
+
 int main(int argc, char const *argv[])
 {
    Paciente a;
    return 0;
 }
-
