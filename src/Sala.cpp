@@ -1,20 +1,32 @@
+#include <iostream>
 #include<Sala.h>
-Sala::Sala(int n_sala, int n_leitos)
-{   numero_sala = n_sala;
-    numero_leitos = n_leitos;
 
+Sala::Sala(int numero_sala){
+    this->numero_sala = numero_sala;
 }
-Sala::Sala(int n_sala){
-    numero_sala = n_sala;
+
+Sala::Sala(int numero_sala, int numero_leitos){   
+    this->numero_sala = numero_sala;
+    this->numero_leitos = numero_leitos;
+}
+
+Sala::Sala(int numero_sala, int numero_leitos, Leito leito1, Leito leito2, Leito leito3, Leito leito4){   
+    this->numero_sala = numero_sala;
+    this->numero_leitos = numero_leitos;
+	
+	leitos.push_back(leito1);
+	leitos.push_back(leito2);
+	leitos.push_back(leito3);
+	leitos.push_back(leito4);
 }
 
 Sala::~Sala()
 {
-    leitura_numero_da_sala();
+    //leitura_numero_da_sala();
 }
 void Sala::leitura_numero_da_sala(){
     int num_sala;
-     cout << "Digite o número da sala do paciente: "<< endl;
+     cout << "Digite o numero da sala do paciente: "<< endl;
       cin >> num_sala;
       numero_sala = num_sala;
 }

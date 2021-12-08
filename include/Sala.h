@@ -10,15 +10,16 @@ using std::vector;
 class Sala {
 private:
    vector<Leito> leitos;
-   int numero_sala; //chave - Essa chave é para na classe Ala ter acesso a uma sala específica
+   int numero_sala; //chave - Essa chave e para na classe Ala ter acesso a uma sala especï¿½fica
    int numero_leitos;
    int numero_leitos_ocupados;
    int numero_leitos_desocupados;
    double percentual_ocupacao;
 
 public:
-   Sala(int n_sala, int n_leitos);
-   Sala(int n_sala);
+   Sala(int numero_sala);
+   Sala(int numero_sala, int numero_leitos);
+   Sala::Sala(int numero_sala, int numero_leitos, Leito leito1, Leito leito2, Leito leito3, Leito leito4);
    ~Sala();
    void leitura_numero_da_sala();
    int get_numero_sala();
