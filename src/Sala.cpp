@@ -1,5 +1,5 @@
 #include <iostream>
-#include<Sala.h>
+#include "Sala.h"
 
 Sala::Sala(int numero_sala){
     this->numero_sala = numero_sala;
