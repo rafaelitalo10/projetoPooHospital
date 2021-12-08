@@ -19,7 +19,7 @@ private:
 public:
    Sala(int numero_sala);
    Sala(int numero_sala, int numero_leitos);
-   Sala::Sala(int numero_sala, int numero_leitos, Leito leito1, Leito leito2, Leito leito3, Leito leito4);
+   Sala(int numero_sala, int numero_leitos, Leito leito1, Leito leito2, Leito leito3, Leito leito4);
    ~Sala();
    void leitura_numero_da_sala();
    int get_numero_sala();
